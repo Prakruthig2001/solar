@@ -18,7 +18,7 @@ db = pymysql.connect(
 def index():
     return render_template('index.html')
 
-@app.route('/about')
+@app.route('/main/Admin/templates/auto.html')
 def about():
     return render_template('about.html')
 
