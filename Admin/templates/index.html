@@ -1,0 +1,26 @@
+<!-- templates/index.html -->
+{% extends "base.html" %}
+
+{% block title %}Home - Mysuru Green Technologies{% endblock %}
+
+{% block content %}
+<div class="mode-buttons">
+  <div class="mode-card" onclick="location.href='{{ url_for('auto') }}'">
+    <i class="fas fa-water"></i>
+    <h3>Auto Mode</h3>
+  </div>
+  <div class="mode-card" onclick="location.href='{{ url_for('manual') }}'">
+    <i class="fas fa-hand-holding-water"></i>
+    <h3>Manual Mode</h3>
+  </div>
+  <div class="mode-card" onclick="location.href='{{ url_for('history') }}'">
+    <i class="fa fa-history"></i>
+    <h3>History</h3>
+  </div>
+
+  <div class="mode-card" onclick="location.href='{{ url_for('profile') }}'">
+     <i class="fa fa-user"></i>
+    <h3>Profile</h3>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}User Profile{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+
+
+    <div class="profile-card">
+      <div class="profile-header">
+        <div class="avatar"><i class="fas fa-user"></i></div>
+        <div class="user-info">
+          <h2>{{ user.name }}</h2>
+          <p class="role"><i class="fas fa-user-tag"></i> {{ user.role|capitalize }}</p>
+        </div>
+      </div>
+  
+      <div class="profile-details">
+        <div><i class="fas fa-id-badge"></i> <strong>ID:</strong> {{ user.id }}</div>
+        <div><i class="fas fa-envelope"></i> <strong>Email:</strong> {{ user.email }}</div>
+        <div><i class="fas fa-phone-alt"></i> <strong>Phone:</strong> {{ user.phone }}</div>
+        <div><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> {{ user.address }}</div>
+      </div>
+  
+      <div class="change-password">
+        <h3><i class="fas fa-lock"></i> Change Password</h3>
+        <form id="passwordForm" method="post" action="{{ url_for('change_password') }}">
+          <input type="password" name="current_password" placeholder="Current Password" required>
+          <input type="password" name="new_password" placeholder="New Password" required>
+          <input type="password" name="confirm_password" placeholder="Confirm New Password" required>
+          <button type="submit"><i class="fas fa-save"></i> Update Password</button>
+        </form>
+        <div id="feedback"></div>
+      </div>
+      
+      <!-- Add this script just before the closing body tag -->
+      <script src="{{ url_for('static', filename='js/profile.js') }}"></script>
+      
+  {% endblock %}

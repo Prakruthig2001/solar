@@ -1,0 +1,39 @@
+<!-- templates/about.html -->
+{% extends "base.html" %}
+
+{% block title %}About{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+<div class="about-container">
+    <h2><i class="fas fa-info-circle"></i> About the Solar Panel Washer</h2>
+    <p>
+      This system is designed to ensure your solar panels stay clean, enhancing their efficiency and lifespan. It supports both <strong>Automatic</strong> and <strong>Manual</strong> modes to meet your convenience and safety requirements.
+    </p>
+  
+    <ul class="mode-details">
+      <li>
+        <i class="fas fa-robot"></i>
+        <strong>Auto Mode:</strong> Operates automatically based on a predefined schedule (e.g., every 7 or 15 days). This ensures your panels remain clean without any manual intervention.
+      </li>
+  
+      <li>
+        <i class="fas fa-hand-holding-water"></i>
+        <strong>Manual Mode:</strong> Allows you to start a wash manually. <strong>However, this mode is only available between <span class="highlight-time">7 PM and 7 AM</span></strong> to prevent thermal shock risks.
+      </li>
+    </ul>
+  
+    <div class="highlight-box">
+      <strong>Why Manual Mode is Time-Restricted:</strong>
+      <ul>
+        <li>Washing during the day can crack or damage solar panels due to heat from sunlight.</li>
+        <li>Cooler nighttime temperatures reduce thermal stress, making it safer to clean.</li>
+        <li>Protects panel coating and improves overall durability.</li>
+      </ul>
+    </div>
+  
+    <p class="closing-text">
+      By using this system, you help your solar installation work at peak performance while extending its operational life. Stay green and efficient!
+    </p>
+  </div>
+  {% endblock %}
