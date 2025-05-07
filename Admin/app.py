@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, session
 from werkzeug.security import check_password_hash, generate_password_hash
 import pymysql
+import about.html
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # needed for flashing
@@ -18,7 +19,7 @@ db = pymysql.connect(
 def index():
     return render_template('index.html')
 
-@app.route('/main/Admin/templates/about.html')
+@app.route('/about.html')
 def about():
     return render_template('about.html')
 
